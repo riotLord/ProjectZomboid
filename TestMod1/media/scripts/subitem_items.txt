@@ -1,0 +1,36 @@
+module sl33p
+{
+    imports {
+        Base
+    }
+
+    /**
+        Lets get cracking!
+    **/
+    item CombatMedicine
+    {
+        Weight = 0.1,
+        Type = Normal,
+        DisplayName = CombatMeds,
+        Icon = EmptyIcon
+    }
+
+    item StimPack 
+    {
+        Weight = 1,
+        Type = Normal,
+        DisplayName = StimPack,
+        Icon = EmptyIcon
+    }
+
+    recipe Combat Stim
+    {
+        CombatMedicine,
+
+        Result:StimPack=1,
+        Sound:PutItemInBag,
+        Time:10.0,
+        Catagory:Cooking,
+        OnGiveXP:Give10CookingXP
+    }
+}
